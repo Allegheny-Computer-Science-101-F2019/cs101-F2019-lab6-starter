@@ -1,0 +1,124 @@
+---
+name: cs101-F2019-lab6
+break: true
+indent: 4
+---
+
+# Learn more about GatorGrader and its supported checks by visiting this web site:
+# https://github.com/GatorEducator/gatorgrader
+
+# Explanation:
+# --> a check without an "--exact" runs a count for an entity as an "at least"
+# --> checks below a file in a specified directory are for that specific file and directory
+# --> checks that appear stand-alone are for an entire Git repository
+
+# --> check the source code for various characteristics
+src/main:
+    java:
+        labsix/data/ResultsTable.java:
+            ConfirmFileExists
+            CountSingleLineComments --language Java --count 2
+            CountMultipleLineComments --language Java --count 12
+            MatchFileFragment --fragment "TODO" --count 0 --exact
+            MatchFileFragment --fragment "Add Your Name Here" --count 0 --exact
+            MatchFileFragment --fragment "package labsix" --count 1 --exact
+            MatchFileFragment --fragment "double ratio =" --count 1 --exact
+            MatchFileFragment --fragment "println" --count 0 --exact
+
+# --> check the source code for various characteristics
+src/main:
+    java:
+        labsix/experiment/Campaign.java:
+            ConfirmFileExists
+            MatchFileFragment --fragment "TODO" --count 0 --exact
+            MatchFileFragment --fragment "Add Your Name Here" --count 0 --exact
+            MatchFileFragment --fragment "package labsix" --count 1 --exact
+            MatchFileFragment --fragment "println" --count 0 --exact
+
+# --> check the source code for various characteristics
+src/main:
+    java:
+        labsix/experiment/Experiment.java:
+            ConfirmFileExists
+            CountSingleLineComments --language Java --count 2
+            CountMultipleLineComments --language Java --count 2
+            MatchFileFragment --fragment "TODO" --count 0 --exact
+            MatchFileFragment --fragment "Add Your Name Here" --count 0 --exact
+            MatchFileFragment --fragment "package labsix" --count 1 --exact
+            MatchFileFragment --fragment "println(" --count 7
+
+# --> check the source code for various characteristics
+src/main:
+    java:
+        labsix/experiment/RunCampaign.java:
+            ConfirmFileExists
+            CountSingleLineComments --language Java --count 1
+            CountMultipleLineComments --language Java --count 7
+            MatchFileFragment --fragment "TODO" --count 0 --exact
+            MatchFileFragment --fragment "Add Your Name Here" --count 0 --exact
+            MatchFileFragment --fragment "package labsix" --count 1 --exact
+            MatchFileFragment --fragment "println(" --count 3
+            MatchFileFragment --fragment "public String generateValidRandomPassword(" --count 1
+            MatchFileFragment --fragment "public String generateInvalidRandomPassword(" --count 1
+
+# --> check the source code for various characteristics
+src/main:
+    java:
+        labsix/checker/PasswordChecker.java:
+            ConfirmFileExists
+            CountSingleLineComments --language Java --count 1
+            CountMultipleLineComments --language Java --count 6
+            MatchFileFragment --fragment "TODO" --count 0 --exact
+            MatchFileFragment --fragment "Add Your Name Here" --count 0 --exact
+            MatchFileFragment --fragment "package labsix" --count 1 --exact
+            MatchFileFragment --fragment "public boolean check(" --count 1 --exact
+            MatchFileFragment --fragment "println(" --count 0 --exact
+
+# --> check the source code for various characteristics
+src/test:
+    java:
+        labsix/TestPasswordChecker.java:
+            ConfirmFileExists
+            MatchFileFragment --fragment "TODO" --count 0 --exact
+            MatchFileFragment --fragment "Add Your Name Here" --count 0 --exact
+            MatchFileFragment --fragment "package labsix" --count 1 --exact
+
+# --> check the source code for various characteristics
+src/test:
+    java:
+        labsix/TestResultsTable.java:
+            ConfirmFileExists
+            MatchFileFragment --fragment "TODO" --count 0 --exact
+            MatchFileFragment --fragment "Add Your Name Here" --count 0 --exact
+            MatchFileFragment --fragment "package labsix" --count 1 --exact
+
+# --> check the source code for various characteristics
+src/test:
+    java:
+        labsix/TestRunCampaign.java:
+            ConfirmFileExists
+            MatchFileFragment --fragment "TODO" --count 0 --exact
+            MatchFileFragment --fragment "Add Your Name Here" --count 0 --exact
+            MatchFileFragment --fragment "package labsix" --count 1 --exact
+
+# --> check the technical writing for various characteristics
+writing/reflection.md:
+    ConfirmFileExists
+    CountFileParagraphs --count 8
+    CountFileWords --count 700
+    CountMarkdownTags --tag "heading" --count 11
+    MatchFileFragment --fragment "Add Your Name Here" --count 0 --exact
+
+# --> check that the number of commits in the Git repository is beyond a baseline
+CountCommits --count 10
+
+# --> check that the program builds, tests, and executes correctly
+ExecuteCommand --command "gradle build"
+ExecuteCommand --command "gradle test"
+
+# NOTE: Optionally, run the gradle run command, bearing in mind that it could take a full minute
+#
+ExecuteCommand --command "gradle -q --console plain run"
+
+# --> NOTE: Do not run repeated checks on the content of the output since this program runs
+# a campaign of experiments and inefficient programs could take too long to repeatedly run
