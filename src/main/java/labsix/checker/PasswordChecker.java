@@ -8,24 +8,16 @@ import java.util.regex.Pattern;
 /**
  * A PasswordChecker class that assess the quality of a password.
  *
- * @author Add Your Name Here
+ * @author Gregory M. Kapfhammer
  */
 
 public class PasswordChecker {
 
-  /** The pattern for the password. */
-  private Pattern pattern;
-
-  /** The pattern for the password. */
-  private Matcher matcher;
-
-  /** The regular expression string for the password. */
-  private static final String PASSWORD_PATTERN =
-      "((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,})";
+  // TODO: Add any needed instance variables
 
   /** Create any needed instance variables for the PasswordChecker. */
   public PasswordChecker() {
-    pattern = Pattern.compile(PASSWORD_PATTERN);
+    // TODO: created any of the needed instance variables
   }
 
   /**
@@ -34,9 +26,14 @@ public class PasswordChecker {
    * @return true if the password is valid, false otherwise
    */
   public boolean check(String password) {
-    // use regular expressions to quickly check the password
-    matcher = pattern.matcher(password);
-    return matcher.matches();
+    // TODO: implement the password checking functionality
+    // The rules for the password checker are as follows:
+    // --> Must contain a digit
+    // --> Must contain a lowercase letter
+    // --> Must contain an uppercase letter
+    // --> Must contain a special symbol of @, #, $, or #
+    // --> Must contain at least six characters
+    return true;
   }
 
 }
